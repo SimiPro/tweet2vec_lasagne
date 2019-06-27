@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # specify test file here
-fulltestdata="../misc/tester_example.txt"
+fulltestdata="../my_testing_file.txt"
 
 # specify model path here
 modelpath="best_model/"

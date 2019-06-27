@@ -41,13 +41,15 @@ def classify(tweet, t_mask, params, n_classes, n_chars):
 
     return lasagne.layers.get_output(l_dense), l_dense, lasagne.layers.get_output(emb_layer)
 
-def main(train_path,val_path,save_path,num_epochs=NUM_EPOCHS):
+def main(train_path,val_path,save_path,num_epochs=50):
     global T1
+    
+    print('NUM EPOCHS %i' % num_epochs)
 
     # save settings
     shutil.copyfile('settings_char.py','%s/settings_char.txt'%save_path)
 
-    print("Preparing Data...")
+    print("Preparing Data 123")
     # Training data
     Xt = []
     yt = []
@@ -84,7 +86,7 @@ def main(train_path,val_path,save_path,num_epochs=NUM_EPOCHS):
         params['b_cl'] = theano.shared(np.zeros((n_classes)).astype('float32'), name='b_cl')
 
     else:
-        print("Loading model params...")
+        print("Loading model params from base path: %s ..." % save_path)
         params = load_params_shared('%s/model.npz' % save_path)
 
         print("Loading dictionaries...")

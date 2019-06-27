@@ -41,7 +41,7 @@ def main(args):
             yt.append(yc.split(','))
 
     # Model
-    print("Loading model params...")
+    print("Loading model params from base path: %s ..." % model_path)
     if len(args)>3:
         params = load_params('%s/model_%d.npz' % (model_path,m_num))
     else:

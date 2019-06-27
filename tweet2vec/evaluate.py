@@ -62,7 +62,7 @@ def readable_predictions(p, t, d, k, labeldict):
         preds = p[idx,:k]
         plabels = ','.join([labeldict.keys()[ii-1] if ii > 0 else '<unk>' for ii in preds])
         tlabels = ','.join([labeldict.keys()[ii-1] if ii > 0 else '<unk>' for ii in t[idx]])
-        out.append('%s\t%s\t%s\n'%(tlabels,plabels,item))
+        out.append('Target: %s\t | Predictions: %s\t | Data: %s\n'%(tlabels,plabels,item))
     return out
 
 def main(result_path, dict_path):

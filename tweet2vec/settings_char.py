@@ -25,7 +25,7 @@ SAVEF = 1000
 # Regularization
 REGULARIZATION = 0.0001
 # Reload
-RELOAD_MODEL = False
+RELOAD_MODEL = True
 # NAG
 MOMENTUM = 0.9
 # clipping
